@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <html>
 <head>
@@ -12,13 +13,15 @@
     <table border="1">
         <thead>
             <tr>
-                <th>All Information</th>
+                <th>Description</th>
+                <th>Calories</th>
             </tr>
         </thead>
         <tbody>
-            <c:forEach items="${meals}" var="meal">
+            <c:forEach items="${meals}" var="mealWithExceed">
                 <tr>
-                    <td><c:out value="${meal}" /></td>
+                    <td><c:out value="${mealWithExceed.description}" /></td>
+                    <td><c:out value="${mealWithExceed.calories}" /></td>
                 </tr>
             </c:forEach>
         </tbody>
