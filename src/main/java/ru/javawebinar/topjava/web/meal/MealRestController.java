@@ -26,7 +26,7 @@ public class MealRestController {
     }
 
     public Meal get(int id) {
-        log.info("get {}", id);
+        log.info("get {}", service.get(id));
         return service.get(id);
     }
 

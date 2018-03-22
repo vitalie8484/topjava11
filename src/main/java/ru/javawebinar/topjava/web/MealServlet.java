@@ -47,12 +47,17 @@ public class MealServlet extends HttpServlet {
         String id = request.getParameter("id");
 
         Meal meal = new Meal(id.isEmpty() ? null : Integer.valueOf(id),
+                Integer.valueOf(request.getParameter("userid")),
                 LocalDateTime.parse(request.getParameter("dateTime")),
                 request.getParameter("description"),
                 Integer.parseInt(request.getParameter("calories")));
 
         log.info(meal.isNew() ? "Create {}" : "Update {}", meal);
-        mealController.create(meal);
+        if (meal.isNew()) {
+            mealController.create(meal);
+        } else {
+            mealController.update(meal, Integer.valueOf(id));
+        }
         response.sendRedirect("meals");
     }
 

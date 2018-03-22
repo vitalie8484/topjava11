@@ -60,13 +60,14 @@ public class Meal extends AbstractBaseEntity {
     }
 
     public boolean isNew() {
-        return id == null && userId == null;
+        return id == null;
     }
 
     @Override
     public String toString() {
         return "Meal{" +
                 "id=" + id +
+                ", userId=" + userId +
                 ", dateTime=" + dateTime +
                 ", description='" + description + '\'' +
                 ", calories=" + calories +
