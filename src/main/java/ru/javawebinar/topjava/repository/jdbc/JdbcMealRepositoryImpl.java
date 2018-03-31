@@ -15,7 +15,7 @@ import javax.sql.DataSource;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Repository
+@Repository("jdbcMealRepositoryImpl")
 public class JdbcMealRepositoryImpl implements MealRepository {
 
     private static final BeanPropertyRowMapper<Meal> ROW_MAPPER = BeanPropertyRowMapper.newInstance(Meal.class);
@@ -68,11 +68,11 @@ public class JdbcMealRepositoryImpl implements MealRepository {
 
     @Override
     public List<Meal> getAll(int userId) {
-        return jdbcTemplate.query("SELECT id, date_time, description, calories FROM meals WHERE user_id=? ORDER BY date_time", ROW_MAPPER, userId);
+        return jdbcTemplate.query("SELECT id, date_time, description, calories FROM meals WHERE user_id=? ORDER BY date_time DESC", ROW_MAPPER, userId);
     }
 
     @Override
     public List<Meal> getBetween(LocalDateTime startDate, LocalDateTime endDate, int userId) {
-        return jdbcTemplate.query("SELECT id, date_time, description, calories FROM meals WHERE user_id=? AND date_time BETWEEN ? AND ? ORDER BY date_time", ROW_MAPPER, userId, startDate, endDate);
+        return jdbcTemplate.query("SELECT id, date_time, description, calories FROM meals WHERE user_id=? AND date_time BETWEEN ? AND ? ORDER BY date_time DESC", ROW_MAPPER, userId, startDate, endDate);
     }
 }

@@ -1,21 +1,22 @@
-package ru.javawebinar.topjava.service;
+package ru.javawebinar.topjava.service.mock;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import ru.javawebinar.topjava.model.Meal;
 import ru.javawebinar.topjava.repository.MealRepository;
+import ru.javawebinar.topjava.service.MealService;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 import static ru.javawebinar.topjava.util.ValidationUtil.checkNotFoundWithId;
 
-@Service("mealServiceImpl")
-public class MealServiceImpl implements MealService {
+@Service
+public class InMemoryMealServiceImpl implements MealService {
 
     @Autowired()
-    @Qualifier("jdbcMealRepositoryImpl")
+    @Qualifier("inMemoryMealRepositoryImpl")
     private MealRepository repository;
 
     /*

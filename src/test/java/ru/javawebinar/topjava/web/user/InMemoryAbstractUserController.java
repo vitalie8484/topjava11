@@ -12,11 +12,11 @@ import java.util.List;
 import static ru.javawebinar.topjava.util.ValidationUtil.assureIdConsistent;
 import static ru.javawebinar.topjava.util.ValidationUtil.checkNew;
 
-public abstract class AbstractUserController {
+public abstract class InMemoryAbstractUserController {
     protected final Logger log = LoggerFactory.getLogger(getClass());
 
     @Autowired
-    @Qualifier("userServiceImpl")
+    @Qualifier("inMemoryUserServiceImpl")
     private UserService service;
 
     public List<User> getAll() {
