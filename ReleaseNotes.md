@@ -1,3 +1,5 @@
+[![Dependency Status](https://www.versioneye.com/user/projects/5ac03c3e0fb24f44857950fc/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/5ac03c3e0fb24f44857950fc)
+
 # TopJava Release Notes
 ### Topjava 10
 - добавил
