@@ -1,5 +1,6 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/6c5c88c4e4cb420fbc0f08978d56a920)](https://www.codacy.com/app/vitalie-jurjiu/topjava11?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=vitalie8484/topjava11&amp;utm_campaign=Badge_Grade)
 [![Dependency Status](https://www.versioneye.com/user/projects/5ac03c3e0fb24f44857950fc/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/5ac03c3e0fb24f44857950fc)
+[![Build Status](https://travis-ci.org/vitalie8484/topjava11.svg?branch=master)](https://travis-ci.org/vitalie8484/topjava11)
 
 # TopJava Release Notes
 ### Topjava 10
