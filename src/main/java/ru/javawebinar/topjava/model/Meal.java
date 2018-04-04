@@ -31,14 +31,12 @@ public class Meal extends AbstractBaseEntity {
 
     @Column(name = "description", nullable = false)
     @NotBlank
-    @Size(min = 5, max = 100)
     private String description;
 
-    @Column(name = "calories", columnDefinition = "int default 0    ")
-    @Range(min = 10, max = 2000)
+    @Column(name = "calories", columnDefinition = "int default 0")
     private int calories;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
 
